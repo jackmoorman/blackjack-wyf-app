@@ -7,6 +7,7 @@ import Game from './pages/Game';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import LogoutSuccess from './pages/LogoutSuccess';
+import HostGame from './pages/HostGame';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/game" element={<GameRootLayout />}>
           <Route index element={<Game />} />
+          <Route path="/game/host" element={<HostGame />} />
         </Route>
       </Route>
       <Route path="login" element={<Login />} />
