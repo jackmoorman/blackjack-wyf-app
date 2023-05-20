@@ -11,7 +11,6 @@ export default function RootLayout() {
     async function checkAuth() {
       const req = await fetch('/auth/verify', { credentials: 'include' });
       const res = await req.json();
-      console.log(res);
       if (res.isAuthenticated) {
         const { id, discord_id, email, username, chips } = res.user;
         dispatch(setUser({ id, discord_id, email, username, chips }));
