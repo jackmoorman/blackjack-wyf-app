@@ -7,3 +7,7 @@ interface User {
   username?: string | null;
   chips?: number | null;
 }
+
+interface GameState {
+  host?: string | null;
+}

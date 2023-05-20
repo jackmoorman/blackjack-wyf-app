@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import LogoutSuccess from './pages/LogoutSuccess';
 import LogoutFailure from './pages/LogoutFailure';
 import NewGame from './pages/NewGame';
+import Game from './pages/Game';
 import GameLobby from './pages/GameLobby';
 
 export default function App() {
@@ -17,8 +18,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/game" element={<GameLayout />}>
           <Route path="/game/new" element={<NewGame />} />
-          <Route path="/game/lobby/:id" element={<GameLobby />} />
-          <Route path="/game/in-progress/:id" element={<GameLobby />} />
+          <Route path="/game/:id" element={<Game />} />
         </Route>
       </Route>
       <Route path="login" element={<Login />} />

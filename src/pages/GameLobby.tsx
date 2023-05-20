@@ -2,26 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../app/store';
 import { useParams } from 'react-router';
-import { socket } from '../socket/socket';
 
-export default function HostGame() {
+export default function GameLobby() {
   const user = useSelector((state: RootState) => state.user);
   const { id } = useParams();
-
-  const [isConnected, setIsConnected] = useState(socket.connected);
-
-  useEffect(() => {
-    function onConnect() {
-      setIsConnected(true);
-    }
-
-    function onDisconnect() {
-      setIsConnected(false);
-    }
-
-    socket.on('connect', onConnect);
-    socket.on('disconnect', onDisconnect);
-  }, []);
 
   return (
     <div className="text-amber-300 flex flex-col items-center text-lg">

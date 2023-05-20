@@ -6,7 +6,7 @@ export default function NewGame() {
   return (
     <div className="grow flex flex-col items-center text-amber-300">
       <h1 className="text-2xl m-12 animate-bounce">Choose one below:</h1>
-      <Link to={`/game/lobby/${uuid()}`} className="link">
+      <Link to={`/game/${uuid()}`} className="link">
         Host New Game
       </Link>
       <Link to="/game/join" className="link m-6">
