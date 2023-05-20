@@ -15,9 +15,11 @@ export default function Loading({ text }: { text: string }) {
     return () => clearInterval(timer);
   }, []);
   return (
-    <h1>
-      {text}
-      {loadingState}
-    </h1>
+    <div className="flex justify-center min-h-screen w-full pt-28">
+      <h1 className="text-amber-300 text-3xl">
+        {text}
+        {loadingState}
+      </h1>
+    </div>
   );
 }
