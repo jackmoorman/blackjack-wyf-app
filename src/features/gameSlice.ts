@@ -1,8 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+interface GameState {
+  host: string | null;
+  inProgress: boolean;
+  users: any[];
+}
+
+interface Player {
+  username: string | null;
+  chips: number | null;
+}
+
+const initialState: GameState = {
   host: null,
   inProgress: false,
+  users: [],
 };
 
 const gameSlice = createSlice({
@@ -12,6 +24,7 @@ const gameSlice = createSlice({
     setGame: (state, action) => {
       state.host = action.payload.host;
       state.inProgress = action.payload.inProgress;
+      state.users = action.payload.users;
     },
   },
 });
